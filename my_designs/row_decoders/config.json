@@ -1,0 +1,19 @@
+{
+  "DESIGN_NAME": "rd_5_32",
+  "VERILOG_FILES": ["dir::rd_2_4.sv", "dir::rd_3_8.sv", "dir::rd_5_32.sv"],
+  "PNR_SDC_FILE": "dir::constraints.sdc",
+  "SIGNOFF_SDC_FILE": "dir::constraints.sdc",
+  "DIE_AREA": "0 0 1000 1000",
+  "CORE_AREA": "20 20 980 980",
+  "FP_PDN_AUTO_ADJUST": true,
+  "PL_RESIZER_DESIGN_OPTIMIZATIONS": false,
+  "PL_RESIZER_TIMING_OPTIMIZATIONS": false,
+  "PL_RESIZER_BUFFER_INPUT_PORTS": false,
+  "PL_RESIZER_BUFFER_OUTPUT_PORTS": false,
+  "GLB_RESIZER_DESIGN_OPTIMIZATIONS": false,
+  "GLB_RESIZER_TIMING_OPTIMIZATIONS": false,
+  "QUIT_ON_LVS_ERROR": false,
+  "QUIT_ON_XOR_ERROR": false
+}
+  
+  
