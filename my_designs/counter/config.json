@@ -1,0 +1,9 @@
+{
+    "DESIGN_NAME": "counter",
+    "VERILOG_FILES": ["dir::counter.sv"],
+    "CLOCK_PERIOD": 25,
+    "CLOCK_PORT": "clk",
+    "PDK": "gf180mcuD"
+  }
+  
+  
