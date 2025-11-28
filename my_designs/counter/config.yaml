@@ -1,0 +1,38 @@
+DESIGN_NAME: counter
+
+VERILOG_FILES:
+  - dir::counter.sv
+
+# CLOCK_PORT: clk
+# CLOCK_PERIOD: 25
+
+PNR_SDC_FILE: dir::constraints.sdc
+
+# PDK / stdcell library–specific settings
+STD_CELL_LIBRARY: "gf180mcu_fd_sc_mcu7t5v0"
+
+pdk::gf180mcuD:
+  scl::gf180mcu_fd_sc_mcu7t5v0:
+
+    # Use only this timing corner
+    DEFAULT_CORNER: nom_gf180mcu_fd_sc_mcu7t5v0_tt_025C_3v30
+    STA_CORNERS: [nom_gf180mcu_fd_sc_mcu7t5v0_tt_025C_3v30]
+
+    # Point that corner to a specific .lib
+    LIB:
+      nom_gf180mcu_fd_sc_mcu7t5v0_tt_025C_3v30:
+        - "pdk_dir::libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib"
+
+TECH_LEFS: { "nom_*": "pdk_dir::libs.ref/gf180mcu_fd_sc_mcu7t5v0/techlef/gf180mcu_fd_sc_mcu7t5v0__nom.tlef"}
+
+# Pin Order
+FP_PIN_ORDER_CFG: dir::pin_order.cfg
+
+# Pin metal layer
+FP_IO_VLAYER: "Metal3"
+FP_IO_VEXTEND: 2.0
+
+# Area
+FP_SIZING: absolute
+DIE_AREA: [0, 0, 60, 180]
+CORE_AREA: [0, 0, 60, 180]

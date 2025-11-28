@@ -46,6 +46,27 @@ librelane-nodrc: ## Run LibreLane flow without DRC checks
 	librelane librelane/slots/slot_${SLOT}.yaml librelane/config.yaml --pdk ${PDK} --pdk-root ${PDK_ROOT} --manual-pdk --skip KLayout.DRC --skip Magic.DRC
 .PHONY: librelane-nodrc
 
+librelane-nodrc-row-decoder: ## Run LibreLane flow without DRC checks
+	librelane  /home/buck/projects/gf180mcu-project-template/my_designs/row_decoders/config.yaml --pdk ${PDK} --pdk-root ${PDK_ROOT} --manual-pdk --skip KLayout.DRC --skip Magic.DRC
+.PHONY: librelane-nodrc-row-decoder
+
+librelane-row-decoder: ## Run LibreLane flow without DRC checks
+	librelane  /home/buck/projects/gf180mcu-project-template/my_designs/row_decoders/config.yaml --pdk ${PDK} --pdk-root ${PDK_ROOT} --manual-pdk
+.PHONY: librelane-row-decoder
+
+librelane-counter: ## Run LibreLane flow without DRC checks
+	librelane  /home/buck/projects/gf180mcu-project-template/my_designs/counter/config.yaml --pdk ${PDK} --pdk-root ${PDK_ROOT} --manual-pdk
+.PHONY: librelane-counter
+
+librelane-klayout-counter: ## Open the last run in KLayout
+	librelane  /home/buck/projects/gf180mcu-project-template/my_designs/counter/config.yaml --pdk ${PDK} --pdk-root ${PDK_ROOT} --manual-pdk --last-run --flow OpenInKLayout
+.PHONY: librelane-klayout-counter
+
+
+librelane-klayout-row-decoder: ## Open the last run in KLayout
+	librelane  /home/buck/projects/gf180mcu-project-template/my_designs/row_decoders/config.yaml --pdk ${PDK} --pdk-root ${PDK_ROOT} --manual-pdk --last-run --flow OpenInKLayout
+.PHONY: librelane-klayout-row-decoder
+
 librelane-klayoutdrc: ## Run LibreLane flow without magic DRC checks
 	librelane librelane/slots/slot_${SLOT}.yaml librelane/config.yaml --pdk ${PDK} --pdk-root ${PDK_ROOT} --manual-pdk --skip Magic.DRC
 .PHONY: librelane-klayoutdrc
